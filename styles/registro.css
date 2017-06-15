@@ -1,0 +1,104 @@
+body{
+  margin: 0;
+  background-color: #6F36FF;
+  font-family: Montserrat;
+  font-size: 100%;
+}
+
+.container {
+  width: 18%;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+header{
+  background-color: white;
+  padding: 20px;
+}
+h1{
+  margin: 0;
+  text-align: center;
+  color: #6F36FF;
+  padding-bottom: 10px;
+}
+
+.userType{
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+input[type=text],input[type=submit],input[type=password], select {
+  float: left;
+  width: 100%;
+  border-radius: 3px;
+  margin: 16px auto;
+  padding: 10px 15px;
+  border: 1px solid white;
+  outline: none;
+  display: block;
+  background-color: white;
+}
+
+input[type=text]:focus ,input[type=password]:focus {
+  border: 1px solid #2E2545;
+}
+
+select, .foto{
+  width: 110%;
+}
+
+input[type=submit]{
+  border: none;
+  cursor: pointer;
+  width: 110%;
+  color: white;
+  background: #2E2545;
+
+}
+
+input[type=submit]:hover{
+  background-color: #282039;
+}
+
+input[type="file"] {
+    display: none;
+}
+.labelRuta {
+    font-size: 14px;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    background-color: #2E2545;
+}
+
+.foto input{
+  float: left;
+  width: 145px;
+}
+
+.foto label{
+  margin-top: 16px;
+  float: right;
+  width: 98px;
+}
+
+a{
+  color: white;
+}
+.link{
+  font-size: 15px;
+  color: white;
+  margin: auto;
+  margin-left: 45px;
+  display: inline-block;
+  padding-bottom: 70px;
+}
+
+.avisoRegistro{
+  color: white;
+  text-align:center;
+  padding: 1px;
+  font-size: 11px;
+}

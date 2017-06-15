@@ -1,0 +1,451 @@
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Montserrat;
+  font-size: 100%;
+  transition: background-color .5s;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+header {
+  padding: 10px;
+  background-color: #4A5165;
+}
+
+header h1 {
+  top: -40px;
+  left: 300px;
+  position: relative;
+  margin: 0;
+  color: white;
+  font-size: 1.5em;
+  float: left;
+}
+
+a {
+  text-decoration: none;
+  color: #6f36ff;
+}
+
+nav {
+  float: right;
+  width: 20%;
+  height: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  font-size: 15px;
+  cursor: pointer;
+  transition: padding .05s linear;
+}
+
+ul li.drop {
+  top: -65px;
+  left: -130px;
+  position: relative;
+}
+
+ul>li {
+  display: inline-block;
+}
+
+.userName {
+  line-height: 80px;
+  /*padding: 0 20px;*/
+  height: 80px;
+  color: white;
+  transition: all .1s ease-out;
+}
+
+.dropOut .triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  top: -8px;
+  left: 50%;
+  margin-left: -8px;
+  position: relative;
+}
+
+.dropdownContain {
+  width: 160px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -80px;
+  /* half of width */
+  top: -400px;
+}
+
+.dropOut {
+  width: 160px;
+  background: white;
+  float: left;
+  position: relative;
+  margin-top: 0px;
+  opacity: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .15);
+  transition: all .1s ease-out;
+}
+
+.dropOut ul {
+  float: left;
+  padding: 10px 0;
+}
+
+.dropOut ul li {
+  text-align: left;
+  float: left;
+  width: 125px;
+  padding: 12px 0 10px 15px;
+  margin: 0px 10px;
+  color: #777;
+  border-radius: 4px;
+  transition: background .1s ease-out;
+}
+
+.dropOut ul li:hover {
+  background: #f6f6f6;
+}
+
+ul li:hover .dropdownContain {
+  top: 65px;
+}
+
+ul li:hover .underline {
+  border-bottom-color: #777;
+}
+
+ul li:hover .dropOut {
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.panel input{
+  display: block;
+}
+
+.panel span{
+  color: white;
+}
+
+.panel{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+input[type=text], input[type=submit], input[type=time], input[type=date], input[type=number]{
+  width: 90%;
+  border-radius: 3px;
+  margin: 16px 0;
+  margin-right: 15px;
+  padding: 8px 15px;
+  border: 1px solid #6F36FF;
+  outline: none;
+  background-color: white;
+}
+
+#abrirFiltro{
+  margin: 20px;
+  display: block;
+  width: 15%;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  transition: all 0.3s;
+  background-color: #6f36ff;
+  color: #fff;
+}
+
+#aplicar, .reserv{
+  /*margin-top: 20px;*/
+  display: block;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  transition: all 0.3s;
+  background-color: #6f36ff;
+  color: #fff;
+}
+
+#abrirFiltro:hover, #abrirFiltro:active, #aplicar:hover, #aplicar:active, .reserv:hover, .reserv:active{
+  color: #6f36ff;
+  background: white;
+  border: 2px solid #6f36ff;
+}
+
+input[type=text]:focus, input[type=date]:focus, input[type=time]:focus, input[type=number]:focus, #abrirFiltro:focus, #aplicar:focus, .reserv:focus{
+  border: 1.5px solid #6F36FF;
+}
+
+.trayecto{
+  margin: 10px;
+  border: 3px solid black;
+  display: block;
+}
+
+.parte{
+  padding: 10px;
+  display: block;
+}
+
+.ultima{
+  padding: 10px;
+}
+
+/*MENU LATERAL*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav #cerrarFiltro {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*OPCIONES PERFIL*/
+i {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 1px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.userName {
+  color: white;
+  transition: all .1s ease-out;
+}
+
+.userName2 {
+  color: white;
+  transition: all .1s ease-out;
+  position: relative;
+  left: -10px;
+}
+
+.userNameImage {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 20px;
+  left: -10px;
+}
+
+/*RESULTADOS*/
+
+.results{
+  margin-left: 40px;
+  /*border: 2px solid blue;*/
+  padding: 2px;
+}
+.Page{
+  position: relative;
+  opacity: 1;
+  transition: .5 ease;
+  backface-visibility: hidden;
+}
+.Trip-container {
+  width: 95%;
+  padding: 16px 12px;
+  margin-bottom: 10px;
+  border: 3px solid #6f36ff;
+  /*border-width: 0 0 1px;*/
+  background-color: #fff;
+  border-radius: 3px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Page:hover .Trip-container {
+  opacity: 0.5;
+}
+
+.Page:hover .Trip-containerC {
+  opacity: 0.5;
+}
+
+.Page:hover .middle {
+  opacity: 1;
+}
+
+.c {
+  width: 80%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.Trip {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.Trip-avatar {
+  border-radius: 100%;
+  display: block;
+  flex: 0 0 98px;
+  margin-right: 16px;
+}
+
+.Trip-avatar>img {
+  border-radius: 100%;
+  height: 96px;
+  width: 96px;
+}
+
+.Trip-seats {
+  font-size: 14px;
+  color: #3EB9A5;
+  margin-top: 4px;
+}
+
+.Trip-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
+}
+
+.Trip-body>h1 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+  color: #2F2F2F;
+  margin-bottom: 8px;
+}
+
+.Trip-location {
+  font-size: 16px;
+  color: #5B5B5B;
+  margin-bottom: 6px;
+  line-height: 20px;
+  /*font-weight: 700;*/
+}
+
+.Trip-location>span {
+  white-space: nowrap;
+}
+
+.Trip-time {
+  font-size: 16px;
+  color: #5B5B5B;
+  margin-bottom: 6px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.Trip-details {
+  color: #757575;
+  margin-bottom: 16px;
+  line-height: 20px;
+  margin-top: 16px;
+}
+
+.Trip-cancelled {
+  margin-top: 5px;
+  font-size: 17px;
+  color: #BD0000;
+}
+
+/*ESTRELLAS*/
+.reservar{
+  float:right;
+}
+
+.ec-stars-wrapper {
+	font-size: 0;
+	display: inline-block;
+}
+
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 32px;
+	font-size: 2rem;
+
+	color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+	color: #6f36ff;
+}
+
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888;
+}
